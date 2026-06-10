@@ -1,3 +1,18 @@
 body{
-    background:#f8f9fa;
+    background:#f5f7fa;
+    font-family:Arial,sans-serif;
+}
+
+.login-card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.logo{
+    width:120px;
+}
+
+.btn-success{
+    background:#198754;
 }
