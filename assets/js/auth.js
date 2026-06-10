@@ -15,26 +15,14 @@ async function login() {
 
     try {
 
-        const response = await fetch(
-            CONFIG.API_URL,
-            {
-                method: "POST",
+        const url =
+            CONFIG.API_URL
+            + "?action=login"
+            + "&username=" + encodeURIComponent(username)
+            + "&password=" + encodeURIComponent(password);
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-
-                    action: "login",
-
-                    username: username,
-
-                    password: password
-
-                })
-            }
-        );
+        const response =
+            await fetch(url);
 
         const result =
             await response.json();
@@ -59,9 +47,7 @@ async function login() {
 
         console.error(error);
 
-        alert(
-            "Gagal terhubung ke server"
-        );
+        alert("Gagal terhubung ke server");
 
     }
 
